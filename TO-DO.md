@@ -10,3 +10,4 @@ Create remote database to store Deck/Card information for each user
 Write class/methods to sync (grab information from remote database and store on local comp in some other formatted text file)
       - and sync on close (send updated information, cards reviewed/added etc, back to remote database)
 
+ 
