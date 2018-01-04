@@ -13,30 +13,22 @@ public class Controller {
     public JFXTextField userName;
     public JFXTextField userPassword;
 
-    //Various Scenes
-    LobbyScreen lobbyScreen;
-
     //Current Stage variable - to pass it to each scene class to change scenes
     Stage currentStage;
 
-
-
     //Login button on login splash screen will authenticate username/pw
-    //and then run 'loadLobbyScreen' method to set the Scene to the Lobby Screen
+    //and then load Lobby Screen
     public void submitLogin(ActionEvent actionEvent) {
         System.out.println("Test " + userName.getText() + " " + userPassword.getText());
         try {
-            loadLobbyScreen();
+            Parent root = FXMLLoader.load(getClass().getResource("lobbyscreen.fxml"));
+            currentStage = (Stage)userName.getScene().getWindow();
+            currentStage.setScene(new Scene(root, 600, 400));
+            currentStage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    //This method loads the Lobby Screen
-    private void loadLobbyScreen() throws Exception {
-        lobbyScreen = new LobbyScreen();
-        currentStage = (Stage)userName.getScene().getWindow();
-        lobbyScreen.getStage().show();
-    }
 }
