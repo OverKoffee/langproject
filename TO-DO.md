@@ -10,4 +10,4 @@ Java-based Desktop SRS application
 - Write class/methods to sync (grab information from remote database and store on local comp in some other formatted text file)</br>
        and sync on close (send updated information, cards reviewed/added etc, back to remote database)
 </br></br>
- <b> ** Currently working out how I'm going to switch through each scene.. considering writing a class for each scene with its own controller ** </b>
+ <b> ** Currently working out how I'm going to switch through each scene.. considering writing a class for each scene with its own controller ** // UPDATE: setting OnAction for Buttons going to new scenes/screens to just setScene as new Parent pointed to the fxml file--creating a class as a controller for each scene, so it will be read automatically once the fxml is loaded as the new scene, because the fxml file will define which controller controls it</b>
