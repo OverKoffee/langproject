@@ -2,9 +2,14 @@ package redmal;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
-public class LobbyController extends Controller {
+public class LobbyController {
     public JFXComboBox selectDeckComboBox;
     public JFXButton reviewDeckButton;
     public JFXButton addCardsButton;
@@ -12,8 +17,18 @@ public class LobbyController extends Controller {
     public JFXButton signoutButton;
     public Label loginUser;
 
-    //This method loads the Lobby Screen
-    private void loadLobbyScreen() throws Exception {
+    Stage currentStage;
 
+    //This method loads the Lobby Screen
+    public void addCards(ActionEvent actionEvent){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("addcardsScreen.fxml"));
+            currentStage = (Stage) addCardsButton.getScene().getWindow();
+            currentStage.setScene(new Scene(root, 600, 400));
+            currentStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
 }
