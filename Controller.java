@@ -1,21 +1,22 @@
 package redmal;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
 public class Controller {
     public JFXTextField userName;
-    public JFXTextField userPassword;
+    public JFXPasswordField userPassword;
 
     //Current Stage variable - to pass it to each scene class to change scenes
     Stage currentStage;
-
     //Login button on login splash screen will authenticate username/pw
     //and then load Lobby Screen
     public void submitLogin(ActionEvent actionEvent) {

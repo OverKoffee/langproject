@@ -52,8 +52,8 @@
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <JFXComboBox fx:id="selectDeckComboBox" editable="true" layoutX="30.0" layoutY="201.0" opacity="0.5" prefHeight="45.0" prefWidth="158.0" promptText="Select Deck" style="-fx-font-size: 18px; -fx-control-inner-background: white; -fx-background-color: black;" visibleRowCount="2" />
-      <JFXButton id="addCardsButton" fx:id="addCardsButton" alignment="CENTER" layoutX="316.0" layoutY="204.0" onAction="#addCards" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #9d0202;" text="Add Cards" textFill="WHITE">
+      <JFXComboBox fx:id="selectDeckComboBox" editable="true" layoutX="30.0" layoutY="201.0" prefHeight="45.0" prefWidth="158.0" promptText="Select Deck" style="-fx-font-size: 18px;" visibleRowCount="2" />
+      <JFXButton id="addCardsButton" fx:id="addCardsButton" alignment="CENTER" layoutX="316.0" layoutY="204.0" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #9d0202;" text="Add Cards" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>

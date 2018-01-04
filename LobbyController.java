@@ -18,12 +18,14 @@ public class LobbyController {
     public Label loginUser;
 
     Stage currentStage;
+    Stage newStage;
 
-    //This method loads the Lobby Screen
-    public void addCards(ActionEvent actionEvent){
+    //This method loads the Add Cards Screen
+    public void addCards(ActionEvent actionEvent) {
+        System.out.println("reads click");
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("addcardsScreen.fxml"));
-            currentStage = (Stage) addCardsButton.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("addcardtodeckscreen.fxml"));
+            currentStage = (Stage)reviewDeckButton.getScene().getWindow();
             currentStage.setScene(new Scene(root, 600, 400));
             currentStage.show();
         } catch (Exception e) {
@@ -31,4 +33,11 @@ public class LobbyController {
         }
     }
 
+    public void reviewDeck(ActionEvent actionEvent){
+        System.out.println("Review Cards Button test.");
+    }
+
+    public void editDeck(ActionEvent actionEvent){
+        System.out.println("Edit Deck Button test.");
+    }
 }

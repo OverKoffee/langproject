@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Light.Distant?>
@@ -23,12 +24,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="userName" focusColor="#9d0202" layoutX="214.0" layoutY="200.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Username" style="-fx-text-inner-color: #5a5a5a;" unFocusColor="#9d0202">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="userPassword" focusColor="#9d0202" layoutX="214.0" layoutY="245.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Password" style="-fx-text-inner-color: #5a5a5a;" unFocusColor="#9d0202">
+      <JFXTextField fx:id="userName" focusColor="BLACK" layoutX="214.0" layoutY="200.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Username" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#9d0202">
          <font>
             <Font size="18.0" />
          </font>
@@ -38,7 +34,7 @@
             <Image url="@usernamelogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="185.0" layoutY="250.0">
+      <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="185.0" layoutY="254.0">
          <image>
             <Image url="@pwlogo.png" />
          </image>
@@ -83,5 +79,10 @@
             <Font size="18.0" />
          </font>
       </JFXButton>
+      <JFXPasswordField fx:id="userPassword" focusColor="BLACK" layoutX="214.0" layoutY="248.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Password" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#9d0202">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXPasswordField>
    </children>
 </AnchorPane>
