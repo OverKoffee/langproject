@@ -14,17 +14,17 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.Controller">
-   <children>      <Label contentDisplay="CENTER" layoutX="179.0" layoutY="76.0" prefHeight="53.0" prefWidth="86.0" style="-fx-alignment: center;" text="Red" textFill="#9d0202">
+   <children>      <Label contentDisplay="CENTER" layoutX="212.0" layoutY="67.0" prefHeight="53.0" prefWidth="86.0" style="-fx-alignment: center;" text="Red" textFill="#9d0202">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="352.0" layoutY="76.0" prefHeight="53.0" prefWidth="69.0" style="-fx-alignment: center;" text="Mal" textFill="#595959">
+      <Label contentDisplay="CENTER" layoutX="353.0" layoutY="67.0" prefHeight="53.0" prefWidth="69.0" style="-fx-alignment: center;" text="Mal" textFill="#595959">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="userName" focusColor="BLACK" layoutX="214.0" layoutY="200.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Username" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#9d0202">
+      <JFXTextField fx:id="userName" focusColor="#5a5a5a" layoutX="214.0" layoutY="200.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Username" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
          <font>
             <Font size="18.0" />
          </font>
@@ -49,7 +49,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="151.0" fitWidth="106.0" layoutX="250.0" layoutY="36.0" preserveRatio="true">
+      <ImageView fitHeight="151.0" fitWidth="106.0" layoutX="260.0" layoutY="14.0" preserveRatio="true">
          <image>
             <Image url="@redmallogo.png" />
          </image>
@@ -74,15 +74,20 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <JFXButton id="submitLoginButton" alignment="CENTER_RIGHT" layoutX="352.0" layoutY="319.0" onAction="#submitLogin" prefHeight="39.0" prefWidth="69.0" style="-fx-background-color: #9d0202;" text="Login" textFill="WHITE">
+      <JFXButton id="submitLoginButton" alignment="CENTER" layoutX="352.0" layoutY="319.0" onAction="#submitLogin" prefHeight="39.0" prefWidth="86.0" style="-fx-background-color: #6e0101 #6e0101;" text="Login" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXPasswordField fx:id="userPassword" focusColor="BLACK" layoutX="214.0" layoutY="248.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Password" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#9d0202">
+      <JFXPasswordField fx:id="userPassword" focusColor="#5a5a5a" layoutX="214.0" layoutY="248.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Password" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
          <font>
             <Font size="18.0" />
          </font>
       </JFXPasswordField>
+      <Label contentDisplay="CENTER" layoutX="177.0" layoutY="132.0" prefHeight="53.0" prefWidth="272.0" style="-fx-alignment: center;" text="Some App Title">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

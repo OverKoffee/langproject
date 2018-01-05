@@ -12,16 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.LobbyController">
-   <children>      <Label contentDisplay="CENTER" layoutX="179.0" layoutY="76.0" prefHeight="53.0" prefWidth="86.0" style="-fx-alignment: center;" text="Red" textFill="#9d0202">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label contentDisplay="CENTER" layoutX="352.0" layoutY="76.0" prefHeight="53.0" prefWidth="69.0" style="-fx-alignment: center;" text="Mal" textFill="#595959">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
+   <children>
       <JFXButton fx:id="signoutButton" layoutX="517.0" layoutY="9.0" style="-fx-background-color: #151928;" text="Sign Out" textFill="WHITE">
          <font>
             <Font size="14.0" />
@@ -32,7 +23,33 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="151.0" fitWidth="106.0" layoutX="250.0" layoutY="36.0" preserveRatio="true">
+      <JFXButton id="editDeckButton" fx:id="editDeckButton" alignment="CENTER" layoutX="453.0" layoutY="204.0" onAction="#editDeck" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #6e0101;" text="Edit Deck" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXComboBox id="selectDeckComboBox" fx:id="selectDeckComboBox" editable="true" layoutX="30.0" layoutY="201.0" opacity="0.5" prefHeight="45.0" prefWidth="158.0" promptText="Select Deck" style="-fx-font-size: 18px; -fx-control-inner-background: white; -fx-background-color: black;" visibleRowCount="2" />
+      <JFXButton id="addCardsButton" fx:id="addCardsButton" alignment="CENTER" layoutX="316.0" layoutY="204.0" onAction="#addCards" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #6e0101;" text="Add Cards" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton id="reviewDeckButton" fx:id="reviewDeckButton" alignment="CENTER" layoutX="207.0" layoutY="204.0" onAction="#reviewDeck" prefHeight="39.0" prefWidth="97.0" style="-fx-background-color: #6e0101;" text="Review" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label contentDisplay="CENTER" layoutX="211.0" layoutY="92.0" prefHeight="53.0" prefWidth="86.0" style="-fx-alignment: center;" text="Red" textFill="#9d0202">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="352.0" layoutY="92.0" prefHeight="53.0" prefWidth="69.0" style="-fx-alignment: center;" text="Mal" textFill="#595959">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="151.0" fitWidth="106.0" layoutX="259.0" layoutY="39.0" preserveRatio="true">
          <image>
             <Image url="@redmallogo.png" />
          </image>
@@ -47,21 +64,5 @@
             </Lighting>
          </effect>
       </ImageView>
-      <JFXButton id="editDeckButton" fx:id="editDeckButton" alignment="CENTER" layoutX="453.0" layoutY="204.0" onAction="#editDeck" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #9d0202;" text="Edit Deck" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </JFXButton>
-      <JFXComboBox fx:id="selectDeckComboBox" editable="true" layoutX="30.0" layoutY="201.0" opacity="0.5" prefHeight="45.0" prefWidth="158.0" promptText="Select Deck" style="-fx-font-size: 18px; -fx-control-inner-background: white; -fx-background-color: black;" visibleRowCount="2" />
-      <JFXButton id="addCardsButton" fx:id="addCardsButton" alignment="CENTER" layoutX="316.0" layoutY="204.0" onAction="#addCards" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #9d0202;" text="Add Cards" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </JFXButton>
-      <JFXButton id="reviewDeckButton" fx:id="reviewDeckButton" alignment="CENTER" layoutX="207.0" layoutY="204.0" onAction="#reviewDeck" prefHeight="39.0" prefWidth="97.0" style="-fx-background-color: #9d0202;" text="Review" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </JFXButton>
    </children>
 </AnchorPane>

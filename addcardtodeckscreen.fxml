@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3d3d4d;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.AddCardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.AddCardController">
    <children>
-      <Label contentDisplay="CENTER" layoutX="298.0" layoutY="357.0" prefHeight="53.0" prefWidth="43.0" style="-fx-alignment: center;" text="mal" textFill="#9a9a9a">
+      <Label contentDisplay="CENTER" layoutX="327.0" layoutY="344.0" prefHeight="53.0" prefWidth="43.0" style="-fx-alignment: center;" text="Mal" textFill="#9a9a9a">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
       <JFXButton fx:id="signoutButton" layoutX="517.0" layoutY="9.0" style="-fx-background-color: #151928;" text="Sign Out" textFill="WHITE">
@@ -23,12 +23,12 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <Label fx:id="loginUser" layoutX="420.0" layoutY="14.0" prefHeight="20.0" prefWidth="97.0" text="Member Name" textFill="#86a3c3">
+      <Label fx:id="loginUser" layoutX="420.0" layoutY="14.0" prefHeight="20.0" prefWidth="97.0" text="Member Name" textFill="#5a5a5a">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="30.0" fitWidth="27.0" layoutX="297.0" layoutY="349.0" preserveRatio="true">
+      <ImageView fitHeight="53.0" fitWidth="43.0" layoutX="293.0" layoutY="338.0" preserveRatio="true">
          <image>
             <Image url="@redmallogo.png" />
          </image>
@@ -53,17 +53,17 @@
             <Image url="@previouslogo.png" />
          </image>
       </ImageView>
-      <Label fx:id="backButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="1.0" layoutY="-6.0" onMouseClicked="#goBackButton" prefHeight="53.0" prefWidth="75.0" text="Back" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="backButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="1.0" layoutY="-6.0" onMouseClicked="#goBackButton" prefHeight="53.0" prefWidth="75.0" text="Back" textAlignment="CENTER" textFill="#6e0101">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <JFXTextArea fx:id="cardFrontTextArea" focusColor="WHITE" layoutX="45.0" layoutY="91.0" maxWidth="517.0" minWidth="517.0" opacity="0.5" prefHeight="68.0" prefWidth="517.0" promptText="Card Front" style="-fx-control-inner-background: black; -fx-prompt-text-fill: white;" unFocusColor="#6e0101" wrapText="true">
+      <JFXTextArea fx:id="cardFrontTextArea" focusColor="#9a9a9a" layoutX="45.0" layoutY="91.0" maxWidth="517.0" minWidth="517.0" prefHeight="68.0" prefWidth="517.0" promptText="Card Front" style="-fx-control-inner-background: #9a9a9a; -fx-prompt-text-fill: white;" unFocusColor="#6e0101" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextArea>
-      <JFXTextArea fx:id="cardBackTextArea" focusColor="WHITE" layoutX="45.0" layoutY="165.0" maxWidth="517.0" minWidth="517.0" opacity="0.5" prefHeight="156.0" prefWidth="517.0" promptText="Card Back" style="-fx-control-inner-background: black; -fx-prompt-text-fill: white;" unFocusColor="#6e0101" wrapText="true">
+      <JFXTextArea fx:id="cardBackTextArea" focusColor="#9a9a9a" layoutX="45.0" layoutY="165.0" maxWidth="517.0" minWidth="517.0" prefHeight="156.0" prefWidth="517.0" promptText="Card Back" style="-fx-control-inner-background: #9a9a9a; -fx-prompt-text-fill: white;" unFocusColor="#6e0101" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
@@ -73,9 +73,9 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </JFXButton>
-      <Label contentDisplay="CENTER" layoutX="276.0" layoutY="357.0" prefHeight="53.0" prefWidth="43.0" style="-fx-alignment: center;" text="Red" textFill="#c60101">
+      <Label contentDisplay="CENTER" layoutX="263.0" layoutY="344.0" prefHeight="53.0" prefWidth="43.0" style="-fx-alignment: center;" text="Red" textFill="#c60101">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
    </children>

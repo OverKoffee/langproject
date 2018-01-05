@@ -22,10 +22,15 @@ public class Controller {
     public void submitLogin(ActionEvent actionEvent) {
         System.out.println("Test " + userName.getText() + " " + userPassword.getText());
         try {
+            MySQLConnect connect = new MySQLConnect();
+            connect.openConnection();
+
             Parent root = FXMLLoader.load(getClass().getResource("lobbyscreen.fxml"));
             currentStage = (Stage)userName.getScene().getWindow();
             currentStage.setScene(new Scene(root, 600, 400));
             currentStage.show();
+
+            //connect.closeConnection();
         } catch (Exception e) {
             e.printStackTrace();
         }

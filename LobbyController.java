@@ -22,7 +22,6 @@ public class LobbyController {
 
     //This method loads the Add Cards Screen
     public void addCards(ActionEvent actionEvent) {
-        System.out.println("reads click");
         try {
             Parent root = FXMLLoader.load(getClass().getResource("addcardtodeckscreen.fxml"));
             currentStage = (Stage)reviewDeckButton.getScene().getWindow();
