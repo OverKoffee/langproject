@@ -23,18 +23,27 @@ public class Controller {
         System.out.println("Test " + userName.getText() + " " + userPassword.getText());
         try {
             MySQLConnect connect = new MySQLConnect();
-            connect.openConnection();
+            connect.verifyLogin();
 
             Parent root = FXMLLoader.load(getClass().getResource("lobbyscreen.fxml"));
             currentStage = (Stage)userName.getScene().getWindow();
             currentStage.setScene(new Scene(root, 600, 400));
             currentStage.show();
-
-            //connect.closeConnection();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    public void goToSignUp(ActionEvent actionEvent) {
+        System.out.println("Test " + userName.getText() + " " + userPassword.getText());
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("signupscreen.fxml"));
+            currentStage = (Stage)userName.getScene().getWindow();
+            currentStage.setScene(new Scene(root, 600, 400));
+            currentStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
