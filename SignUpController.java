@@ -43,28 +43,29 @@ public class SignUpController {
     // already being used (through the 'verifyIfUserExists' method down below
     public void createNewUser() throws IOException {
         String query = "INSERT INTO UserDatabase (Username, Password, Email) VALUES (?,?,?)";
-        if (verifyIfUserExists(signupUsername.getText(), signupPassword.getText(), signupEmail.getText())){
+        if (verifyIfUserExists(signupUsername.getText(), signupEmail.getText())){
             try {
                 PreparedStatement pst = dbConnection.prepareStatement(query);
                 pst.setString(1, signupUsername.getText());
                 pst.setString(2, signupPassword.getText());
                 pst.setString(3, signupEmail.getText());
                 pst.execute();
-            }catch(SQLException exc){
-                System.out.println("An error occurred while trying to connect to database.");
-                System.out.println(exc);
-            }finally{
-                try{
-                    dbConnection.close();
-                }catch(SQLException e){
-                    System.out.println(e);
-                }
                 System.out.println("Account created successfully.");
-            // if the user is verified and account is created, we return to login screen
+
+                // if the user is verified and account is created, we return to login screen
                 Parent root = FXMLLoader.load(getClass().getResource("loginscreen.fxml"));
                 Stage currentStage = (Stage)signupUsername.getScene().getWindow();
                 currentStage.setScene(new Scene(root, 600, 400));
                 currentStage.show();
+            }catch(SQLException exc){
+                System.out.println("An error occurred while trying to connect to database.");
+                System.out.println(exc);
+            }finally{
+                try {
+                    dbConnection.close();
+                }catch(SQLException e){
+                    System.out.println(e);
+                }
             }
         } else {
             System.out.println("Unable to create account.");
@@ -75,7 +76,7 @@ public class SignUpController {
     // already exists in the UserDatabase, if not, it sends false to the above
     // 'createNewUser' method and new account is created, otherwise, it sends
     // true and tells why account can't be created
-    public boolean verifyIfUserExists(String username, String pw, String email){
+    public boolean verifyIfUserExists(String username, String email){
         Boolean doesNotExist = false;
         try {
             String selectSQL = "SELECT * FROM UserDatabase WHERE Username ='" + username +"'";
@@ -105,14 +106,8 @@ public class SignUpController {
             }
         }catch(SQLException exc){
             System.out.println(exc);
-        }finally{
-            try {
-                dbConnection.close();
-            } catch (SQLException e) {
-                System.out.println(e);
-            }
-            return doesNotExist;
         }
+        return doesNotExist;
     }
 
 }

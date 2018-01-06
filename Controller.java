@@ -11,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Controller {
     public JFXTextField userName;
     public JFXPasswordField userPassword;
@@ -36,15 +38,11 @@ public class Controller {
         }
     }
 
-    public void clickSignUp(ActionEvent actionEvent) {
-        try {
+    public void clickSignUp(ActionEvent actionEvent) throws IOException {
             Parent root = FXMLLoader.load(getClass().getResource("signupscreen.fxml"));
             currentStage = (Stage)userName.getScene().getWindow();
             currentStage.setScene(new Scene(root, 600, 400));
             currentStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
 }
