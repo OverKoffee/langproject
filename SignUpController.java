@@ -11,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.sql.*;
 
 public class SignUpController {
@@ -36,12 +38,12 @@ public class SignUpController {
         }
     }
 
-
-    public boolean createNewUser(){
-        Boolean createdNewUser = false;
+    // this method adds account information input by user to the database
+    // and creates account, after it's verified username and email aren't
+    // already being used (through the 'verifyIfUserExists' method down below
+    public void createNewUser() throws IOException {
         String query = "INSERT INTO UserDatabase (Username, Password, Email) VALUES (?,?,?)";
         if (verifyIfUserExists(signupUsername.getText(), signupPassword.getText(), signupEmail.getText())){
-            createdNewUser = true;
             try {
                 PreparedStatement pst = dbConnection.prepareStatement(query);
                 pst.setString(1, signupUsername.getText());
@@ -58,15 +60,21 @@ public class SignUpController {
                     System.out.println(e);
                 }
                 System.out.println("Account created successfully.");
-
-                return createdNewUser;
+            // if the user is verified and account is created, we return to login screen
+                Parent root = FXMLLoader.load(getClass().getResource("loginscreen.fxml"));
+                Stage currentStage = (Stage)signupUsername.getScene().getWindow();
+                currentStage.setScene(new Scene(root, 600, 400));
+                currentStage.show();
             }
         } else {
-            return createdNewUser;
+            System.out.println("Unable to create account.");
         }
     }
 
-
+    // this method checks if the Username and E-mail input by the user
+    // already exists in the UserDatabase, if not, it sends false to the above
+    // 'createNewUser' method and new account is created, otherwise, it sends
+    // true and tells why account can't be created
     public boolean verifyIfUserExists(String username, String pw, String email){
         Boolean doesNotExist = false;
         try {

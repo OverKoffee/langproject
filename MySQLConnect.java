@@ -22,7 +22,7 @@ public class MySQLConnect {
         }
     }
 
-    
+
     public boolean verifyLogin(String username, String pw) {
         boolean userVerified = false;
         try {
@@ -48,30 +48,6 @@ public class MySQLConnect {
                 System.out.println(e);
             }
             return userVerified;
-        }
-    }
-
-    public void createNewUser(String username, String pw, String email){
-        try {
-            String selectSQL = "SELECT * FROM UserDatabase WHERE Username ='" + username +
-                    "' and password='" + pw + "'";
-            preparedStatement = dbConnection.prepareStatement(selectSQL);
-
-            //Execute select SQL statement
-            ResultSet rs = preparedStatement.executeQuery();
-            if (rs.next()){
-                System.out.println("Logged in successfully.");
-            }
-            else {
-            }
-        }catch(SQLException exc){
-            System.out.println(exc);
-        }finally{
-            try {
-                dbConnection.close();
-            } catch (SQLException e) {
-                System.out.println(e);
-            }
         }
     }
 
