@@ -23,12 +23,14 @@ public class Controller {
         System.out.println("Test " + userName.getText() + " " + userPassword.getText());
         try {
             MySQLConnect connect = new MySQLConnect();
-            connect.verifyLogin();
-
-            Parent root = FXMLLoader.load(getClass().getResource("lobbyscreen.fxml"));
-            currentStage = (Stage)userName.getScene().getWindow();
-            currentStage.setScene(new Scene(root, 600, 400));
-            currentStage.show();
+            if (connect.verifyLogin(userName.getText(), userPassword.getText())){
+                Parent root = FXMLLoader.load(getClass().getResource("lobbyscreen.fxml"));
+                currentStage = (Stage)userName.getScene().getWindow();
+                currentStage.setScene(new Scene(root, 600, 400));
+                currentStage.show();
+            }else{
+                System.out.println("Login Failed.");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

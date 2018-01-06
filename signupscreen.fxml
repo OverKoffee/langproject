@@ -52,7 +52,7 @@
             </Lighting>
          </effect>
       </ImageView>
-      <JFXButton id="submitSignupButton" alignment="CENTER" layoutX="266.0" layoutY="334.0" onAction="#submitLogin" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #6e0101 #6e0101;" text="Sign Up" textFill="WHITE">
+      <JFXButton id="submitSignupButton" alignment="CENTER" layoutX="266.0" layoutY="334.0" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #6e0101 #6e0101;" text="Sign Up" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
