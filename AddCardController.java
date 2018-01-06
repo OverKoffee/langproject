@@ -17,10 +17,6 @@ public class AddCardController {
     public Label backButton;
     Stage currentStage;
 
-    public AddCardController(){
-
-    }
-
     //This method returns program to the Lobby Screen
     public void goBackButton(MouseEvent event) {
         try {
@@ -28,10 +24,10 @@ public class AddCardController {
             currentStage = (Stage) addCardToDeckButton.getScene().getWindow();
             currentStage.setScene(new Scene(root, 600, 400));
             currentStage.show();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     public void addCardToDeck(ActionEvent actionEvent) {

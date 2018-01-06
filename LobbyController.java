@@ -19,10 +19,6 @@ public class LobbyController {
 
     Stage currentStage;
 
-    public LobbyController(){
-        loggedInUserLabel.setText(Main.LoggedInUser);
-    }
-
     //This method loads the Add Cards Screen
     public void addCards(ActionEvent actionEvent) {
         try {
@@ -33,6 +29,7 @@ public class LobbyController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     public void reviewDeck(ActionEvent actionEvent){

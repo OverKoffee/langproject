@@ -23,10 +23,10 @@ public class Controller {
     //and then load Lobby Screen
     public void clickLogin(ActionEvent actionEvent) {
         try {
+            // setting static var as logged-in user for the app
+            Main.LoggedInUser = userName.getText();
             MySQLConnect connect = new MySQLConnect();
             if (connect.verifyLogin(userName.getText(), userPassword.getText())){
-                // setting static var as logged-in user for the app
-                Main.LoggedInUser = userName.getText();
                 Parent root = FXMLLoader.load(getClass().getResource("lobbyscreen.fxml"));
                 currentStage = (Stage)userName.getScene().getWindow();
                 currentStage.setScene(new Scene(root, 600, 400));

@@ -27,6 +27,21 @@
             <Font size="18.0" />
          </font>
       </JFXTextField>
+      <JFXTextField id="signupPassword" fx:id="signupPassword" focusColor="#5a5a5a" layoutX="227.0" layoutY="203.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Password" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField id="signupEmail" fx:id="signupEmail" focusColor="#5a5a5a" layoutX="227.0" layoutY="253.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  E-mail" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton id="submitSignupButton" alignment="CENTER" layoutX="266.0" layoutY="334.0" onAction="#createNewUser" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #6e0101 #6e0101;" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
       <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="203.0" layoutY="167.0">
          <image>
             <Image url="@usernamelogo.png" />
@@ -52,25 +67,10 @@
             </Lighting>
          </effect>
       </ImageView>
-      <JFXButton id="submitSignupButton" alignment="CENTER" layoutX="266.0" layoutY="334.0" onAction="#createNewUser" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #6e0101 #6e0101;" text="Sign Up" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </JFXButton>
-      <JFXTextField id="signupEmail" fx:id="signupEmail" focusColor="#5a5a5a" layoutX="227.0" layoutY="253.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  E-mail" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </JFXTextField>
       <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="195.0" layoutY="256.0" preserveRatio="true">
          <image>
             <Image url="@emaillogo.png" />
          </image>
       </ImageView>
-      <JFXTextField id="signupPassword" fx:id="signupPassword" focusColor="#5a5a5a" layoutX="227.0" layoutY="203.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Password" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </JFXTextField>
    </children>
 </AnchorPane>
