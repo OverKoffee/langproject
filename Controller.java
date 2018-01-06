@@ -37,7 +37,6 @@ public class Controller {
     }
 
     public void goToSignUp(ActionEvent actionEvent) {
-        System.out.println("Test " + userName.getText() + " " + userPassword.getText());
         try {
             Parent root = FXMLLoader.load(getClass().getResource("signupscreen.fxml"));
             currentStage = (Stage)userName.getScene().getWindow();
