@@ -19,7 +19,7 @@ public class Controller {
     Stage currentStage;
     //Login button on login splash screen will authenticate username/pw
     //and then load Lobby Screen
-    public void submitLogin(ActionEvent actionEvent) {
+    public void clickLogin(ActionEvent actionEvent) {
         System.out.println("Test " + userName.getText() + " " + userPassword.getText());
         try {
             MySQLConnect connect = new MySQLConnect();
@@ -36,7 +36,7 @@ public class Controller {
         }
     }
 
-    public void goToSignUp(ActionEvent actionEvent) {
+    public void clickSignUp(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("signupscreen.fxml"));
             currentStage = (Stage)userName.getScene().getWindow();

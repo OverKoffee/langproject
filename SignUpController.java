@@ -37,16 +37,16 @@ public class SignUpController {
     }
 
 
-    public boolean createNewUser(String user, String pw, String email){
+    public boolean createNewUser(){
         Boolean createdNewUser = false;
         String query = "INSERT INTO UserDatabase (Username, Password, Email) VALUES (?,?,?)";
-        if (verifyIfUserExists(user, pw, email)){
+        if (verifyIfUserExists(signupUsername.getText(), signupPassword.getText(), signupEmail.getText())){
             createdNewUser = true;
             try {
                 PreparedStatement pst = dbConnection.prepareStatement(query);
-                pst.setString(1, user);
-                pst.setString(2, pw);
-                pst.setString(3, email);
+                pst.setString(1, signupUsername.getText());
+                pst.setString(2, signupPassword.getText());
+                pst.setString(3, signupEmail.getText());
                 pst.execute();
             }catch(SQLException exc){
                 System.out.println("An error occurred while trying to connect to database.");
@@ -57,6 +57,8 @@ public class SignUpController {
                 }catch(SQLException e){
                     System.out.println(e);
                 }
+                System.out.println("Account created successfully.");
+
                 return createdNewUser;
             }
         } else {
@@ -65,10 +67,10 @@ public class SignUpController {
     }
 
 
-    public boolean verifyIfUserExists(String user, String pw, String email){
+    public boolean verifyIfUserExists(String username, String pw, String email){
         Boolean doesNotExist = false;
         try {
-            String selectSQL = "SELECT * FROM UserDatabase WHERE Username ='" + user +"'";
+            String selectSQL = "SELECT * FROM UserDatabase WHERE Username ='" + username +"'";
             String selectSQL2 = "SELECT * FROM UserDatabase WHERE Email ='" + email + "'";
             PreparedStatement pst = dbConnection.prepareStatement(selectSQL);
             PreparedStatement pst2 = dbConnection.prepareStatement(selectSQL2);
@@ -78,6 +80,17 @@ public class SignUpController {
             if (rs.next()){
                 doesNotExist = false;
                 System.out.println("User already exists.");
+                return doesNotExist;
+            }
+            else {
+                doesNotExist = true;
+            }
+
+            rs = pst2.executeQuery();
+            if (rs.next()){
+                doesNotExist = false;
+                System.out.println("E-mail already in use.");
+                return doesNotExist;
             }
             else {
                 doesNotExist = true;

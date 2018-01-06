@@ -22,6 +22,7 @@ public class MySQLConnect {
         }
     }
 
+    
     public boolean verifyLogin(String username, String pw) {
         boolean userVerified = false;
         try {
@@ -50,7 +51,7 @@ public class MySQLConnect {
         }
     }
 
-    public void createNewUser(String user, String pw, String email){
+    public void createNewUser(String username, String pw, String email){
         try {
             String selectSQL = "SELECT * FROM UserDatabase WHERE Username ='" + username +
                     "' and password='" + pw + "'";
