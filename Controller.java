@@ -22,10 +22,11 @@ public class Controller {
     //Login button on login splash screen will authenticate username/pw
     //and then load Lobby Screen
     public void clickLogin(ActionEvent actionEvent) {
-        System.out.println("Test " + userName.getText() + " " + userPassword.getText());
         try {
             MySQLConnect connect = new MySQLConnect();
             if (connect.verifyLogin(userName.getText(), userPassword.getText())){
+                // setting static var as logged-in user for the app
+                Main.LoggedInUser = userName.getText();
                 Parent root = FXMLLoader.load(getClass().getResource("lobbyscreen.fxml"));
                 currentStage = (Stage)userName.getScene().getWindow();
                 currentStage.setScene(new Scene(root, 600, 400));

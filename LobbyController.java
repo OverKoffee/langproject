@@ -15,10 +15,13 @@ public class LobbyController {
     public JFXButton addCardsButton;
     public JFXButton editDeckButton;
     public JFXButton signoutButton;
-    public Label loginUser;
+    public Label loggedInUserLabel;
 
     Stage currentStage;
-    Stage newStage;
+
+    public LobbyController(){
+        loggedInUserLabel.setText(Main.LoggedInUser);
+    }
 
     //This method loads the Add Cards Screen
     public void addCards(ActionEvent actionEvent) {

@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    static String LoggedInUser; // making static variable to manage app in all scenes
+                                // based on logged-in user
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -17,6 +19,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+
         launch(args);
     }
 }

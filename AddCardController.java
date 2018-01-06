@@ -13,10 +13,13 @@ public class AddCardController {
     public JFXButton clearCardButton;
     public JFXButton addCardToDeckButton;
     public JFXButton signoutButton;
-    public Label loginUser;
+    public Label loggedInUserLabel;
     public Label backButton;
-
     Stage currentStage;
+
+    public AddCardController(){
+
+    }
 
     //This method returns program to the Lobby Screen
     public void goBackButton(MouseEvent event) {
