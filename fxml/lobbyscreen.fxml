@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.LobbyController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.LobbyController">
    <children>
       <JFXButton fx:id="signoutButton" layoutX="517.0" layoutY="9.0" style="-fx-background-color: #151928;" text="Sign Out" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <Label id="loggedInUserLabel" fx:id="loggedInUserLabel" layoutX="421.0" layoutY="14.0" prefHeight="20.0" prefWidth="97.0" text="Member Name" textFill="#5a5a5a">
+      <Label id="loggedInUserLabel" fx:id="loggedInUserLabel" layoutX="421.0" layoutY="14.0" prefHeight="20.0" prefWidth="97.0" text="test" textFill="#5a5a5a">
          <font>
             <Font size="14.0" />
          </font>
@@ -51,7 +51,7 @@
       </Label>
       <ImageView fitHeight="151.0" fitWidth="106.0" layoutX="259.0" layoutY="39.0" preserveRatio="true">
          <image>
-            <Image url="@redmallogo.png" />
+            <Image url="@../images/redmallogo.png" />
          </image>
          <effect>
             <Lighting diffuseConstant="1.51" specularConstant="0.65" surfaceScale="1.97">

@@ -1,4 +1,4 @@
-package redmal;
+package redmal.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -20,7 +20,7 @@ public class AddCardController {
     //This method returns program to the Lobby Screen
     public void goBackButton(MouseEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("lobbyScreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../fxml/lobbyScreen.fxml"));
             currentStage = (Stage) addCardToDeckButton.getScene().getWindow();
             currentStage.setScene(new Scene(root, 600, 400));
             currentStage.show();

@@ -1,4 +1,4 @@
-package redmal;
+package redmal.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -22,7 +22,7 @@ public class LobbyController {
     //This method loads the Add Cards Screen
     public void addCards(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("addcardtodeckscreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../fxml/addcardtodeckscreen.fxml"));
             currentStage = (Stage)reviewDeckButton.getScene().getWindow();
             currentStage.setScene(new Scene(root, 600, 400));
             currentStage.show();

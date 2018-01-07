@@ -1,4 +1,4 @@
-package redmal;
+package redmal.classes;
 
 import java.sql.*;
 

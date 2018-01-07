@@ -1,4 +1,4 @@
-package redmal;
+package redmal.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -53,7 +53,7 @@ public class SignUpController {
                 System.out.println("Account created successfully.");
 
                 // if the user is verified and account is created, we return to login screen
-                Parent root = FXMLLoader.load(getClass().getResource("loginscreen.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("../fxml/loginscreen.fxml"));
                 Stage currentStage = (Stage)signupUsername.getScene().getWindow();
                 currentStage.setScene(new Scene(root, 600, 400));
                 currentStage.show();

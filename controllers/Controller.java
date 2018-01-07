@@ -1,15 +1,14 @@
-package redmal;
+package redmal.controllers;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
+import redmal.classes.Main;
+import redmal.classes.MySQLConnect;
 
 import java.io.IOException;
 
@@ -27,7 +26,7 @@ public class Controller {
             Main.LoggedInUser = userName.getText();
             MySQLConnect connect = new MySQLConnect();
             if (connect.verifyLogin(userName.getText(), userPassword.getText())){
-                Parent root = FXMLLoader.load(getClass().getResource("lobbyscreen.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("../fxml/lobbyscreen.fxml"));
                 currentStage = (Stage)userName.getScene().getWindow();
                 currentStage.setScene(new Scene(root, 600, 400));
                 currentStage.show();
@@ -40,7 +39,7 @@ public class Controller {
     }
 
     public void clickSignUp(ActionEvent actionEvent) throws IOException {
-            Parent root = FXMLLoader.load(getClass().getResource("signupscreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../fxml/signupscreen.fxml"));
             currentStage = (Stage)userName.getScene().getWindow();
             currentStage.setScene(new Scene(root, 600, 400));
             currentStage.show();

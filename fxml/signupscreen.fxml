@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.SignUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.SignUpController">
    <children>      <Label contentDisplay="CENTER" layoutX="212.0" layoutY="67.0" prefHeight="53.0" prefWidth="86.0" style="-fx-alignment: center;" text="Red" textFill="#9d0202">
          <font>
             <Font size="36.0" />
@@ -44,17 +44,17 @@
       </JFXButton>
       <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="203.0" layoutY="167.0">
          <image>
-            <Image url="@usernamelogo.png" />
+            <Image url="@../images/usernamelogo.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="198.0" layoutY="209.0">
          <image>
-            <Image url="@pwlogo.png" />
+            <Image url="@../images/pwlogo.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="151.0" fitWidth="106.0" layoutX="260.0" layoutY="14.0" preserveRatio="true">
          <image>
-            <Image url="@redmallogo.png" />
+            <Image url="@../images/redmallogo.png" />
          </image>
          <effect>
             <Lighting diffuseConstant="1.51" specularConstant="0.65" surfaceScale="1.97">
@@ -69,7 +69,7 @@
       </ImageView>
       <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="195.0" layoutY="256.0" preserveRatio="true">
          <image>
-            <Image url="@emaillogo.png" />
+            <Image url="@../images/emaillogo.png" />
          </image>
       </ImageView>
    </children>
