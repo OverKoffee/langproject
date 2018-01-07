@@ -1,6 +1,8 @@
 package redmal.classes;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MySQLConnect {
     private Connection dbConnection = null;
@@ -49,6 +51,31 @@ public class MySQLConnect {
             }
             return userVerified;
         }
+    }
+
+    public List<String> getDeckList(String username) {
+        List<String> items = new ArrayList<>();
+        try {
+            String selectSQL = "SELECT * FROM UserDeckList WHERE Username ='" + username + "'";
+            preparedStatement = dbConnection.prepareStatement(selectSQL);
+
+            //Execute select SQL statement
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                System.out.println("Found a deck successfully.");
+                items.add(rs.getString("DeckName"));
+                System.out.println("Added a deck successfully.");
+            }
+        }catch(SQLException exc){
+            System.out.println(exc);
+        }finally{
+            try {
+                dbConnection.close();
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return items;
     }
 
 }
