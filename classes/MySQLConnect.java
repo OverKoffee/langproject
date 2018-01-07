@@ -1,5 +1,7 @@
 package redmal.classes;
 
+import redmal.controllers.LobbyController;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

@@ -15,6 +15,7 @@ import redmal.classes.MySQLConnect;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class LobbyController {
     public JFXComboBox selectDeckComboBox;
@@ -23,32 +24,31 @@ public class LobbyController {
     public JFXButton editDeckButton;
     public JFXButton signoutButton;
     public Label loggedInUserLabel;
-    private List<String> items;
+    public List<String> items;
 
     Stage currentStage;
 
+    // this method initializes the deck list from database for the current user
+    // in the combobox for the user to select, as well as initialize prompt text
+    // and 'New Deck' item
     @FXML
     public void initialize() {
-        loadDecks();
-        selectDeckComboBox.getItems().removeAll(selectDeckComboBox.getItems());
-        selectDeckComboBox.getItems().addAll("New Deck", items);
-        //selectDeckComboBox.getSelectionModel().select("");
-        selectDeckComboBox.setPromptText("Select Deck");
-    }
-
-    // this method loads the deck list from database for the current user
-    // in the combobox for the user to select
-    public void loadDecks(){
         items = new ArrayList<>();
         MySQLConnect dbConnection = new MySQLConnect();
         items = dbConnection.getDeckList(Main.LoggedInUser);
+        selectDeckComboBox.getItems().removeAll(selectDeckComboBox.getItems());
+        selectDeckComboBox.setPromptText("Select Deck");
+        selectDeckComboBox.getItems().add("New Deck");
+        for (ListIterator<String> iter = items.listIterator(); iter.hasNext(); ){
+            selectDeckComboBox.getItems().add(iter.next());
+        }
     }
 
     public void deckSelection(ActionEvent actionEvent) throws IOException {
         if (selectDeckComboBox.getValue().equals("New Deck")){
             //add code here to open scene that prompts user for new deck
             Parent root = FXMLLoader.load(getClass().getResource("../fxml/createnewdeckscreen.fxml"));
-            Stage createDeckStage = new Stage();
+            Stage createDeckStage = (Stage)selectDeckComboBox.getScene().getWindow();
             createDeckStage.setScene(new Scene(root, 468, 282));
             createDeckStage.show();
         }

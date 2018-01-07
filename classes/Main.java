@@ -7,8 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    public static String LoggedInUser = ""; // making static variable to manage app in all scenes
-                                // based on logged-in user
+    public static String LoggedInUser = ""; // static variable to manage app in respective scenes
+                                            // based on logged-in user
+    public static String CurrentSelectedDeck = ""; // static variable to manage app in respective scenes
+                                                   // based on current selected deck
 
     @Override
     public void start(Stage primaryStage) throws Exception{

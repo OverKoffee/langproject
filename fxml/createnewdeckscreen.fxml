@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="282.0" prefWidth="468.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.SignUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="282.0" prefWidth="468.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.CreateNewDeckScreen">
    <children>      <Label contentDisplay="CENTER" layoutX="133.0" layoutY="72.0" prefHeight="53.0" prefWidth="86.0" style="-fx-alignment: center;" text="Red" textFill="#9d0202">
          <font>
             <Font size="36.0" />
@@ -22,21 +22,16 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <JFXTextField id="deckName" fx:id="signupUsername" focusColor="#5a5a5a" layoutX="148.0" layoutY="163.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  New Deck Name" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
+      <JFXTextField id="deckName" fx:id="deckName" focusColor="#5a5a5a" layoutX="148.0" layoutY="163.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  New Deck Name" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
          <font>
             <Font size="18.0" />
          </font>
       </JFXTextField>
-      <JFXButton id="createNewDeckButton" alignment="CENTER" layoutX="244.0" layoutY="225.0" onAction="#createNewUser" prefHeight="39.0" prefWidth="134.0" style="-fx-background-color: #6e0101 #6e0101;" text="Create Deck" textFill="WHITE">
+      <JFXButton id="createNewDeckButton" fx:id="createNewDeckButton" alignment="CENTER" layoutX="244.0" layoutY="225.0" onAction="#createNewDeck" prefHeight="39.0" prefWidth="134.0" style="-fx-background-color: #6e0101 #6e0101;" text="Create Deck" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="124.0" layoutY="173.0">
-         <image>
-            <Image url="@../images/usernamelogo.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="151.0" fitWidth="106.0" layoutX="181.0" layoutY="19.0" preserveRatio="true">
          <image>
             <Image url="@../images/redmallogo.png" />
@@ -52,10 +47,15 @@
             </Lighting>
          </effect>
       </ImageView>
-      <JFXButton id="cancelNewDeckButton" alignment="CENTER" layoutX="91.0" layoutY="225.0" onAction="#createNewUser" prefHeight="39.0" prefWidth="134.0" style="-fx-background-color: #6e0101 #6e0101;" text="Create Deck" textFill="WHITE">
+      <JFXButton id="cancelNewDeckButton" fx:id="cancelNewDeckButton" alignment="CENTER" layoutX="91.0" layoutY="225.0" prefHeight="39.0" prefWidth="134.0" style="-fx-background-color: #6e0101 #6e0101;" text="Cancel" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
+      <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="120.0" layoutY="167.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/deckstacklogo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
