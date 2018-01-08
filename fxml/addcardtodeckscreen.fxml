@@ -58,12 +58,12 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <JFXTextArea fx:id="cardFrontTextArea" focusColor="#9a9a9a" layoutX="45.0" layoutY="91.0" maxWidth="517.0" minWidth="517.0" prefHeight="68.0" prefWidth="517.0" promptText="Card Front" style="-fx-control-inner-background: #9a9a9a; -fx-prompt-text-fill: white;" unFocusColor="#6e0101" wrapText="true">
+      <JFXTextArea id="frontCardTextField" fx:id="frontCardTextField" focusColor="#9a9a9a" layoutX="45.0" layoutY="91.0" maxWidth="517.0" minWidth="517.0" prefHeight="68.0" prefWidth="517.0" promptText="Card Front" style="-fx-control-inner-background: #9a9a9a; -fx-prompt-text-fill: white;" unFocusColor="#6e0101" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextArea>
-      <JFXTextArea fx:id="cardBackTextArea" focusColor="#9a9a9a" layoutX="45.0" layoutY="165.0" maxWidth="517.0" minWidth="517.0" prefHeight="156.0" prefWidth="517.0" promptText="Card Back" style="-fx-control-inner-background: #9a9a9a; -fx-prompt-text-fill: white;" unFocusColor="#6e0101" wrapText="true">
+      <JFXTextArea id="backCardTextField" fx:id="backCardTextField" focusColor="#9a9a9a" layoutX="45.0" layoutY="165.0" maxWidth="517.0" minWidth="517.0" prefHeight="156.0" prefWidth="517.0" promptText="Card Back" style="-fx-control-inner-background: #9a9a9a; -fx-prompt-text-fill: white;" unFocusColor="#6e0101" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>

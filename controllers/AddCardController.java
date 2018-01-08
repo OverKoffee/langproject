@@ -1,6 +1,7 @@
 package redmal.controllers;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +14,8 @@ public class AddCardController {
     public JFXButton clearCardButton;
     public JFXButton addCardToDeckButton;
     public JFXButton signoutButton;
+    public JFXTextField frontCardTextField;
+    public JFXTextField backCardTextField;
     public Label loggedInUserLabel;
     public Label backButton;
     Stage currentStage;
@@ -35,6 +38,8 @@ public class AddCardController {
     }
 
     public void clearCard(ActionEvent actionEvent) {
-        System.out.println("Card clear test.");
+        frontCardTextField.setText("");
+        backCardTextField.setText("");
+        System.out.println("Card textfields cleared.");
     }
 }
