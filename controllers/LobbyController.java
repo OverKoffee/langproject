@@ -52,6 +52,8 @@ public class LobbyController {
             Stage createDeckStage = (Stage)selectDeckComboBox.getScene().getWindow();
             createDeckStage.setScene(new Scene(root, 468, 282));
             createDeckStage.show();
+        }else {
+            Main.CurrentSelectedDeck = (String)selectDeckComboBox.getValue();
         }
     }
 
