@@ -33,6 +33,7 @@ public class LobbyController {
     // and 'New Deck' item
     @FXML
     public void initialize() {
+        loggedInUserLabel.setText(Main.LoggedInUser);
         items = new ArrayList<>();
         MySQLConnect dbConnection = new MySQLConnect();
         items = dbConnection.getDeckList(Main.LoggedInUser);

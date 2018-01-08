@@ -3,12 +3,14 @@ package redmal.controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import redmal.classes.Main;
 
 public class AddCardController {
     public JFXButton clearCardButton;
@@ -20,6 +22,11 @@ public class AddCardController {
     public Label backButton;
     Stage currentStage;
 
+    @FXML
+    public void initialize(){
+        loggedInUserLabel.setText(Main.LoggedInUser);
+    }
+    
     //This method returns program to the Lobby Screen
     public void goBackButton(MouseEvent event) {
         try {
@@ -30,7 +37,6 @@ public class AddCardController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public void addCardToDeck(ActionEvent actionEvent) {
