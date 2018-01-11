@@ -53,6 +53,7 @@ public class AddCardController {
 
     //This method returns program to the Lobby Screen
     public void goBackButton(MouseEvent event) {
+        loggedInUserLabel.setText(Main.LoggedInUser);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("../fxml/lobbyScreen.fxml"));
             currentStage = (Stage) addCardToDeckButton.getScene().getWindow();
