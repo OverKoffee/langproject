@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.ReviewDeckController">
+   <children>
+      <Label contentDisplay="CENTER" layoutX="327.0" layoutY="346.0" prefHeight="53.0" prefWidth="43.0" style="-fx-alignment: center;" text="Mal" textFill="#9a9a9a">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXButton id="signoutButton" fx:id="signoutButton" layoutX="517.0" layoutY="9.0" style="-fx-background-color: #151928;" text="Sign Out" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <Label id="loggedInUserLabel" fx:id="loggedInUserLabel" alignment="CENTER_RIGHT" layoutX="414.0" layoutY="14.0" prefHeight="20.0" prefWidth="97.0" text="Member Name" textFill="#5a5a5a">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="53.0" fitWidth="43.0" layoutX="293.0" layoutY="340.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/redmallogo.png" />
+         </image>
+         <effect>
+            <Lighting diffuseConstant="1.51" specularConstant="0.65" surfaceScale="1.97">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#f3ddb6" />
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <JFXButton id="greatButton" fx:id="greatButton" alignment="CENTER" layoutX="413.0" layoutY="299.0" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #6e0101;" text="Great" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="39.0" fitWidth="36.0" layoutX="-4.0" layoutY="3.0" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../images/previouslogo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="backButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="1.0" layoutY="-6.0" onMouseClicked="#goBackButton" prefHeight="53.0" prefWidth="75.0" text="Back" textAlignment="CENTER" textFill="#6e0101">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <JFXTextArea id="frontCardTextArea" fx:id="frontCardTextField" editable="false" focusColor="#f3ddb6" focusTraversable="false" layoutX="42.0" layoutY="47.0" maxWidth="517.0" minWidth="517.0" prefHeight="69.0" prefWidth="517.0" style="-fx-control-inner-background: #F3DDB6; -fx-text-inner-alignment: center; -fx-text-inner-color: black;" text="Test" unFocusColor="#f3ddb6" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextArea>
+      <JFXButton id="goodButton" fx:id="goodButton" alignment="CENTER" layoutX="244.0" layoutY="299.0" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #6e0101;" text="Good" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label contentDisplay="CENTER" layoutX="263.0" layoutY="346.0" prefHeight="53.0" prefWidth="43.0" style="-fx-alignment: center;" text="Red" textFill="#c60101">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextArea id="backCardTextArea" fx:id="frontCardTextField1" editable="false" focusColor="#f3ddb6" focusTraversable="false" layoutX="42.0" layoutY="116.0" maxWidth="517.0" minWidth="517.0" prefHeight="147.0" prefWidth="517.0" style="-fx-control-inner-background: #F3DDB6; -fx-text-alignment: center; -fx-text-inner-color: black;" text="Test" unFocusColor="#f3ddb6" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextArea>
+      <JFXButton id="badButton" fx:id="badButton" alignment="CENTER" layoutX="76.0" layoutY="299.0" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #6e0101;" text="Bad" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

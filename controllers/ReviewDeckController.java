@@ -2,6 +2,7 @@ package redmal.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
+import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,12 +17,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AddCardController {
-    public JFXButton clearCardButton;
-    public JFXButton addCardToDeckButton;
+public class ReviewDeckController {
+    public JFXButton bad, good, great;
     public JFXButton signoutButton;
-    public JFXTextArea frontCardTextField;
-    public JFXTextArea backCardTextField;
+    public JFXTextArea frontCardTextArea;
+    public JFXTextArea backCardTextArea;
     public Label loggedInUserLabel;
     public Label backButton;
     private Connection dbConnection = null;
@@ -31,7 +31,7 @@ public class AddCardController {
     Stage currentStage;
 
     // create database connection
-    public AddCardController(){
+    public ReviewDeckController(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
             dbConnection = DriverManager.getConnection(url, user, password);
@@ -53,8 +53,8 @@ public class AddCardController {
     public void goBackButton(MouseEvent event) {
         loggedInUserLabel.setText(Main.LoggedInUser);
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("../fxml/lobbyScreen.fxml"));
-            currentStage = (Stage) addCardToDeckButton.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("../fxml/lobbyscreen.fxml"));
+            currentStage = (Stage) frontCardTextArea.getScene().getWindow();
             currentStage.setScene(new Scene(root, 600, 400));
             currentStage.show();
         } catch (Exception e) {
@@ -62,20 +62,20 @@ public class AddCardController {
         }
     }
 
-    public void addCardToDeck(ActionEvent actionEvent) {
+    public void reviewCard(ActionEvent actionEvent) {
         String query = "INSERT INTO UserCards (Username, DeckName, FrontCard, BackCard," +
                 "                              GradeValue) VALUES (?,?,?,?,?)";
         try {
             PreparedStatement pst = dbConnection.prepareStatement(query);
             pst.setString(1, Main.LoggedInUser);
             pst.setString(2, Main.CurrentSelectedDeck);
-            pst.setString(3, frontCardTextField.getText());
-            pst.setString(4, backCardTextField.getText());
+            pst.setString(3, frontCardTextArea.getText());
+            pst.setString(4, backCardTextArea.getText());
             pst.setString(5, "0.0");
             pst.execute();
             System.out.println("New Deck added successfully.");
-            frontCardTextField.setText("");
-            backCardTextField.setText("");
+            frontCardTextArea.setText("");
+            backCardTextArea.setText("");
         }catch (SQLException exc){
             System.out.println(exc);
         }finally{
@@ -87,9 +87,4 @@ public class AddCardController {
         }
     }
 
-    public void clearCard(ActionEvent actionEvent) {
-        frontCardTextField.setText("");
-        backCardTextField.setText("");
-        System.out.println("Card textfields cleared.");
-    }
 }

@@ -58,7 +58,7 @@ public class LobbyController {
     //This method loads the Add Cards Screen
     public void addCards(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("../fxml/addcardtodeckscreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../fxml/createnewcardscreen.fxml"));
             currentStage = (Stage)reviewDeckButton.getScene().getWindow();
             currentStage.setScene(new Scene(root, 600, 400));
             currentStage.show();
@@ -68,7 +68,14 @@ public class LobbyController {
     }
 
     public void reviewDeck(ActionEvent actionEvent){
-        System.out.println("Review Cards Button test.");
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../fxml/reviewdeckscreen.fxml"));
+            currentStage = (Stage)reviewDeckButton.getScene().getWindow();
+            currentStage.setScene(new Scene(root, 600, 400));
+            currentStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void editDeck(ActionEvent actionEvent){

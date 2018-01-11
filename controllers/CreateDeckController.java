@@ -11,7 +11,7 @@ import redmal.classes.Main;
 import java.io.IOException;
 import java.sql.*;
 
-public class CreateNewDeckScreen {
+public class CreateDeckController {
     public JFXTextField deckName;
     public JFXButton createNewDeckButton;
     public JFXButton cancelNewDeckButton;
@@ -21,7 +21,7 @@ public class CreateNewDeckScreen {
     private String password = "EmrDHlTHv3";
 
     // create database connection
-    public CreateNewDeckScreen(){
+    public CreateDeckController(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
             dbConnection = DriverManager.getConnection(url, user, password);
@@ -55,7 +55,7 @@ public class CreateNewDeckScreen {
         } else {
             System.out.println("Deck name already exists.");
         }
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/LobbyScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/lobbyscreen.fxml"));
         Stage reloadLobby = (Stage)deckName.getScene().getWindow();
         reloadLobby.setScene(new Scene(root, 600, 400));
         reloadLobby.show();

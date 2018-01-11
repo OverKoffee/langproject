@@ -1,5 +1,9 @@
 package redmal.classes;
-
+/*
+Idea - keep review count hidden from user, utilize a health/damage bar
+and when the user died (health is dead), the user's deck is erased...
+motivation to keep up on reviews
+ */
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

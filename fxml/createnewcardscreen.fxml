@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.AddCardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.CreateCardController">
    <children>
-      <Label contentDisplay="CENTER" layoutX="327.0" layoutY="346.0" prefHeight="53.0" prefWidth="43.0" style="-fx-alignment: center;" text="Mal" textFill="#9a9a9a">
+      <Label contentDisplay="CENTER" layoutX="327.0" layoutY="344.0" prefHeight="53.0" prefWidth="43.0" style="-fx-alignment: center;" text="Mal" textFill="#9a9a9a">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -28,7 +28,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="53.0" fitWidth="43.0" layoutX="293.0" layoutY="340.0" preserveRatio="true">
+      <ImageView fitHeight="53.0" fitWidth="43.0" layoutX="293.0" layoutY="338.0" preserveRatio="true">
          <image>
             <Image url="@../images/redmallogo.png" />
          </image>
@@ -43,9 +43,9 @@
             </Lighting>
          </effect>
       </ImageView>
-      <JFXButton id="addCardToDeckButton" fx:id="addCardToDeckButton" alignment="CENTER" layoutX="413.0" layoutY="299.0" onAction="#addCardToDeck" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #6e0101;" text="Great" textFill="WHITE">
+      <JFXButton id="addCardToDeckButton" fx:id="addCardToDeckButton" alignment="CENTER" layoutX="437.0" layoutY="347.0" onAction="#addCardToDeck" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #6e0101;" text="Add Card" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </JFXButton>
       <ImageView fitHeight="39.0" fitWidth="36.0" layoutX="-4.0" layoutY="3.0" preserveRatio="true" rotate="90.0">
@@ -58,30 +58,25 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <JFXTextArea id="frontCardTextArea" fx:id="frontCardTextField" editable="false" focusColor="#f3ddb6" focusTraversable="false" layoutX="42.0" layoutY="47.0" maxWidth="517.0" minWidth="517.0" prefHeight="69.0" prefWidth="517.0" style="-fx-control-inner-background: #F3DDB6; -fx-text-inner-alignment: center; -fx-text-inner-color: black;" text="Test" unFocusColor="#f3ddb6" wrapText="true">
+      <JFXTextArea id="frontCardTextArea" fx:id="frontCardTextArea" focusColor="#9a9a9a" layoutX="45.0" layoutY="91.0" maxWidth="517.0" minWidth="517.0" prefHeight="68.0" prefWidth="517.0" promptText="Card Front" style="-fx-control-inner-background: #9a9a9a; -fx-prompt-text-fill: white;" unFocusColor="#6e0101" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextArea>
-      <JFXButton fx:id="clearCardButton" alignment="CENTER" layoutX="244.0" layoutY="299.0" onAction="#clearCard" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #6e0101;" text="Good" textFill="WHITE">
+      <JFXTextArea id="backCardTextArea" fx:id="backCardTextArea" focusColor="#9a9a9a" layoutX="45.0" layoutY="165.0" maxWidth="517.0" minWidth="517.0" prefHeight="156.0" prefWidth="517.0" promptText="Card Back" style="-fx-control-inner-background: #9a9a9a; -fx-prompt-text-fill: white;" unFocusColor="#6e0101" wrapText="true">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font size="14.0" />
+         </font>
+      </JFXTextArea>
+      <JFXButton fx:id="clearCardButton" alignment="CENTER" layoutX="45.0" layoutY="347.0" onAction="#clearCard" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #6e0101;" text="Clear Card" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
          </font>
       </JFXButton>
-      <Label contentDisplay="CENTER" layoutX="263.0" layoutY="346.0" prefHeight="53.0" prefWidth="43.0" style="-fx-alignment: center;" text="Red" textFill="#c60101">
+      <Label contentDisplay="CENTER" layoutX="263.0" layoutY="344.0" prefHeight="53.0" prefWidth="43.0" style="-fx-alignment: center;" text="Red" textFill="#c60101">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <JFXTextArea id="backCardTextArea" fx:id="frontCardTextField1" editable="false" focusColor="#f3ddb6" focusTraversable="false" layoutX="42.0" layoutY="116.0" maxWidth="517.0" minWidth="517.0" prefHeight="147.0" prefWidth="517.0" style="-fx-control-inner-background: #F3DDB6; -fx-text-alignment: center; -fx-text-inner-color: black;" text="Test" unFocusColor="#f3ddb6" wrapText="true">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextArea>
-      <JFXButton id="addCardToDeckButton" fx:id="addCardToDeckButton1" alignment="CENTER" layoutX="76.0" layoutY="299.0" onAction="#addCardToDeck" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #6e0101;" text="Bad" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </JFXButton>
    </children>
 </AnchorPane>
