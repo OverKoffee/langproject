@@ -10,8 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import redmal.classes.Main;
-import redmal.classes.MySQLConnect;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +33,7 @@ public class LobbyController {
     public void initialize() {
         loggedInUserLabel.setText(Main.LoggedInUser);
         items = new ArrayList<>();
-        MySQLConnect dbConnection = new MySQLConnect();
+        LoginController dbConnection = new LoginController();
         items = dbConnection.getDeckList(Main.LoggedInUser);
         selectDeckComboBox.getItems().removeAll(selectDeckComboBox.getItems());
         selectDeckComboBox.setPromptText("Select Deck");

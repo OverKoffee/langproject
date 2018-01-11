@@ -1,17 +1,10 @@
 package redmal.controllers;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
-
-import javax.swing.*;
 import java.io.IOException;
 import java.sql.*;
 

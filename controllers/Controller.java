@@ -8,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import redmal.classes.Main;
-import redmal.classes.MySQLConnect;
 
 import java.io.IOException;
 
@@ -24,7 +23,7 @@ public class Controller {
         try {
             // setting static var as logged-in user for the app
             Main.LoggedInUser = userName.getText();
-            MySQLConnect connect = new MySQLConnect();
+            LoginController connect = new LoginController();
             if (connect.verifyLogin(userName.getText(), userPassword.getText())){
                 Parent root = FXMLLoader.load(getClass().getResource("../fxml/lobbyscreen.fxml"));
                 currentStage = (Stage)userName.getScene().getWindow();
