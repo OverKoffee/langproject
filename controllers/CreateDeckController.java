@@ -40,7 +40,7 @@ public class CreateDeckController {
             try {
                 PreparedStatement pst = dbConnection.prepareStatement(query);
                 pst.setString(1, Main.LoggedInUser);
-                pst.setString(2, deckName.getText());
+                pst.setString(2, Main.cleanInput(deckName.getText()));
                 pst.execute();
                 System.out.println("New Deck added successfully.");
             }catch (SQLException exc){

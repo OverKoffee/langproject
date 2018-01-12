@@ -2,7 +2,6 @@ package redmal.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
-import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,6 +47,7 @@ public class ReviewDeckController {
     public void initialize(){
         loggedInUserLabel.setText(Main.LoggedInUser);
     }
+
 
     //This method returns program to the Lobby Screen
     public void goBackButton(MouseEvent event) {

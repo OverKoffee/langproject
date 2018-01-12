@@ -67,7 +67,7 @@ public class LoginController {
         boolean userVerified = false;
         try {
             String selectSQL = "SELECT * FROM UserDatabase WHERE Username ='" + username +
-                    "' and Password='" + pw + "'";
+                    "' and Password='" + Main.hash(pw) + "'";
             preparedStatement = dbConnection.prepareStatement(selectSQL);
 
             //Execute select SQL statement

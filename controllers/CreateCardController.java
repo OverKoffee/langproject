@@ -2,6 +2,7 @@ package redmal.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import redmal.classes.Main;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,6 +26,7 @@ public class CreateCardController {
     public JFXTextArea backCardTextArea;
     public Label loggedInUserLabel;
     public Label backButton;
+    public Label cardAddedLabel;
     private Connection dbConnection = null;
     private String url = "jdbc:mysql://sql3.freemysqlhosting.net:3306/sql3214145";
     private String user = "sql3214145";
@@ -47,6 +50,7 @@ public class CreateCardController {
     @FXML
     public void initialize(){
         loggedInUserLabel.setText(Main.LoggedInUser);
+        cardAddedLabel.setVisible(false);
     }
 
     //This method returns program to the Lobby Screen
@@ -69,13 +73,21 @@ public class CreateCardController {
             PreparedStatement pst = dbConnection.prepareStatement(query);
             pst.setString(1, Main.LoggedInUser);
             pst.setString(2, Main.CurrentSelectedDeck);
-            pst.setString(3, frontCardTextArea.getText());
-            pst.setString(4, backCardTextArea.getText());
+            pst.setString(3, Main.cleanInput(frontCardTextArea.getText()));
+            pst.setString(4, Main.cleanInput(backCardTextArea.getText()));
             pst.setString(5, "0.0");
             pst.execute();
-            System.out.println("New Deck added successfully.");
+            System.out.println("New Card added successfully.");
             frontCardTextArea.setText("");
             backCardTextArea.setText("");
+            cardAddedLabel.setVisible(true);
+            FadeTransition ft = new FadeTransition(Duration.millis(3000), cardAddedLabel);
+            ft.setFromValue(1.0);
+            ft.setToValue(0.0);
+            ft.setCycleCount(4);
+            ft.setAutoReverse(true);
+            ft.play();
+            cardAddedLabel.setVisible(false);
         }catch (SQLException exc){
             System.out.println(exc);
         }finally{

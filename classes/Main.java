@@ -10,6 +10,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class Main extends Application {
     public static String LoggedInUser = ""; // static variable to manage app in respective scenes
                                             // based on logged-in user
@@ -27,5 +31,20 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         launch(args);
+    }
+
+    // method to hash passwords
+    public static String hash(String pwd) throws NoSuchAlgorithmException {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] bytes = digest.digest(pwd.getBytes(StandardCharsets.UTF_8));
+        StringBuffer hashed = new StringBuffer();
+        for(byte b: bytes)
+            hashed.append(Integer.toHexString(0xff & b));
+        return hashed.toString();
+    }
+
+    // method to clean input before sending to database
+    public static String cleanInput(String dirty){
+        return dirty.replaceAll("[\\\\({});|]", "");
     }
 }

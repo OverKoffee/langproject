@@ -5,8 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import redmal.classes.Main;
 import java.io.IOException;
 import java.sql.*;
+import java.security.NoSuchAlgorithmException;
 
 public class SignUpController {
     public JFXTextField signupUsername;
@@ -36,12 +38,13 @@ public class SignUpController {
     // already being used (through the 'verifyIfUserExists' method down below
     public void createNewUser() throws IOException {
         String query = "INSERT INTO UserDatabase (Username, Password, Email) VALUES (?,?,?)";
+
         if (verifyIfUserExists(signupUsername.getText(), signupEmail.getText())){
             try {
                 PreparedStatement pst = dbConnection.prepareStatement(query);
-                pst.setString(1, signupUsername.getText());
-                pst.setString(2, signupPassword.getText());
-                pst.setString(3, signupEmail.getText());
+                pst.setString(1, Main.cleanInput(signupUsername.getText()));
+                pst.setString(2, Main.hash(signupPassword.getText()));
+                pst.setString(3, Main.cleanInput(signupEmail.getText()));
                 pst.execute();
                 System.out.println("Account created successfully.");
 
@@ -50,7 +53,7 @@ public class SignUpController {
                 Stage currentStage = (Stage)signupUsername.getScene().getWindow();
                 currentStage.setScene(new Scene(root, 600, 400));
                 currentStage.show();
-            }catch(SQLException exc){
+            }catch(SQLException | NoSuchAlgorithmException exc){
                 System.out.println("An error occurred while trying to connect to database.");
                 System.out.println(exc);
             }finally{
