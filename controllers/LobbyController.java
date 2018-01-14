@@ -68,6 +68,7 @@ public class LobbyController {
     }
 
     public void reviewDeck(ActionEvent actionEvent){
+        if (Main.CurrentSelectedDeck != null){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("../fxml/reviewdeckscreen.fxml"));
             currentStage = (Stage)reviewDeckButton.getScene().getWindow();
@@ -75,6 +76,9 @@ public class LobbyController {
             currentStage.show();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        } else {
+            System.out.println("You must select a deck.");
         }
     }
 

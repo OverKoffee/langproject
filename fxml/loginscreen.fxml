@@ -5,89 +5,58 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Shadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.LoginController">
-   <children>      <Label contentDisplay="CENTER" layoutX="212.0" layoutY="67.0" prefHeight="53.0" prefWidth="86.0" style="-fx-alignment: center;" text="Red" textFill="#9d0202">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label contentDisplay="CENTER" layoutX="353.0" layoutY="67.0" prefHeight="53.0" prefWidth="69.0" style="-fx-alignment: center;" text="Mal" textFill="#595959">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <JFXTextField fx:id="userName" focusColor="#5a5a5a" layoutX="214.0" layoutY="200.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Username" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('file:C:/Users/Weikai/Documents/myJavaFX/src/redmal/images/loginbg.png');" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.LoginController">
+   <children>
+      <JFXTextField fx:id="userName" focusColor="#9d0202" layoutX="202.0" layoutY="158.0" maxWidth="228.0" minWidth="169.0" prefHeight="45.0" prefWidth="224.0" promptText="  Username" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: white;" unFocusColor="#a3a3a3">
          <font>
             <Font size="18.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="userPassword" focusColor="#5a5a5a" layoutX="214.0" layoutY="248.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Password" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
+      <JFXPasswordField fx:id="userPassword" focusColor="#9d0202" layoutX="202.0" layoutY="208.0" maxWidth="228.0" minWidth="169.0" prefHeight="45.0" prefWidth="224.0" promptText="  Password" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#a3a3a3">
          <font>
             <Font size="18.0" />
          </font>
       </JFXPasswordField>
-      <JFXButton id="submitLoginButton" alignment="CENTER" layoutX="352.0" layoutY="319.0" onAction="#clickLogin" prefHeight="39.0" prefWidth="86.0" style="-fx-background-color: #6e0101 #6e0101;" text="Login" textFill="WHITE">
+      <JFXButton id="submitLoginButton" alignment="CENTER" layoutX="352.0" layoutY="319.0" onAction="#clickLogin" prefHeight="39.0" prefWidth="86.0" style="-fx-background-color: #6e0101 #6e0101;" text="Login" textFill="#a3a3a3">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <effect>
+            <DropShadow height="1.0" offsetX="2.5" offsetY="4.5" radius="0.0" spread="1.0" width="1.0" />
+         </effect>
       </JFXButton>
       <JFXButton id="signupButton" layoutX="517.0" layoutY="17.0" onAction="#clickSignUp" style="-fx-background-color: #151928;" text="Sign Up" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <DropShadow color="WHITE" height="5.0" offsetX="1.5" offsetY="2.5" radius="2.0" width="5.0" />
+         </effect>
       </JFXButton>
-      <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="190.0" layoutY="210.0">
-         <image>
-            <Image url="@../images/usernamelogo.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="185.0" layoutY="254.0">
-         <image>
-            <Image url="@../images/pwlogo.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="415.0" layoutY="22.0" prefHeight="17.0" prefWidth="97.0" text="Not a member?" textFill="#5a5a5a">
+      <Label layoutX="415.0" layoutY="22.0" prefHeight="17.0" prefWidth="97.0" text="Not a member?" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="151.0" fitWidth="106.0" layoutX="260.0" layoutY="14.0" preserveRatio="true">
-         <image>
-            <Image url="@../images/redmallogo.png" />
-         </image>
+      <JFXCheckBox id="rememberMeCheck" fx:id="rememberMeCheck" checkedColor="#9d0202" layoutX="282.0" layoutY="325.0" text=" " unCheckedColor="#a3a3a3">
+         <font>
+            <Font size="18.0" />
+         </font>
          <effect>
-            <Lighting diffuseConstant="1.51" specularConstant="0.65" surfaceScale="1.97">
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#f3ddb6" />
-               </light>
-            </Lighting>
+            <DropShadow />
          </effect>
-      </ImageView>
-      <JFXCheckBox checkedColor="#9d0202" layoutX="282.0" layoutY="325.0" text=" ">
-         <font>
-            <Font size="18.0" />
-         </font>
       </JFXCheckBox>
-      <Label layoutX="157.0" layoutY="325.0" text="Remember me?" textFill="#5a5a5a">
+      <Label layoutX="157.0" layoutY="325.0" text="Remember me?" textFill="#a3a3a3">
          <font>
             <Font size="18.0" />
          </font>
-      </Label>
-      <Label contentDisplay="CENTER" layoutX="177.0" layoutY="132.0" prefHeight="53.0" prefWidth="272.0" style="-fx-alignment: center;" text="Some App Title">
-         <font>
-            <Font size="36.0" />
-         </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
    </children>
 </AnchorPane>

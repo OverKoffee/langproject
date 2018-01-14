@@ -15,9 +15,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Main extends Application {
-    public static String LoggedInUser = ""; // static variable to manage app in respective scenes
+    public static String LoggedInUser = null; // static variable to manage app in respective scenes
                                             // based on logged-in user
-    public static String CurrentSelectedDeck = ""; // static variable to manage app in respective scenes
+    public static String CurrentSelectedDeck = null; // static variable to manage app in respective scenes
                                                    // based on current selected deck
 
     @Override
