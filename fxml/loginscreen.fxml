@@ -9,19 +9,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('file:C:/Users/Weikai/Documents/myJavaFX/src/redmal/images/loginbg.png');" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="923.0" style="-fx-background-image: url('file:C:/Users/Weikai/Documents/myJavaFX/src/redmal/images/loginbg2.png');" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.LoginController">
    <children>
-      <JFXTextField fx:id="userName" focusColor="#9d0202" layoutX="202.0" layoutY="158.0" maxWidth="228.0" minWidth="169.0" prefHeight="45.0" prefWidth="224.0" promptText="  Username" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: white;" unFocusColor="#a3a3a3">
+      <JFXTextField fx:id="userName" focusColor="#9c030300" layoutX="333.0" layoutY="352.0" maxWidth="271.0" minWidth="169.0" prefHeight="45.0" prefWidth="249.0" promptText="Username" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: white;" unFocusColor="#a1a1a100">
          <font>
-            <Font size="18.0" />
+            <Font size="16.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="userPassword" focusColor="#9d0202" layoutX="202.0" layoutY="208.0" maxWidth="228.0" minWidth="169.0" prefHeight="45.0" prefWidth="224.0" promptText="  Password" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#a3a3a3">
+      <JFXPasswordField fx:id="userPassword" focusColor="#9c030300" layoutX="333.0" layoutY="397.0" maxWidth="271.0" minWidth="169.0" prefHeight="45.0" prefWidth="249.0" promptText="Password" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: white;" unFocusColor="#a1a1a100">
          <font>
-            <Font size="18.0" />
+            <Font size="16.0" />
          </font>
       </JFXPasswordField>
-      <JFXButton id="submitLoginButton" alignment="CENTER" layoutX="352.0" layoutY="319.0" onAction="#clickLogin" prefHeight="39.0" prefWidth="86.0" style="-fx-background-color: #6e0101 #6e0101;" text="Login" textFill="#a3a3a3">
+      <JFXButton id="submitLoginButton" alignment="CENTER" layoutX="500.0" layoutY="458.0" onAction="#clickLogin" prefHeight="30.0" prefWidth="79.0" style="-fx-background-color: #2D2D2D;" text="Login" textFill="#a3a3a3">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -29,20 +29,20 @@
             <DropShadow height="1.0" offsetX="2.5" offsetY="4.5" radius="0.0" spread="1.0" width="1.0" />
          </effect>
       </JFXButton>
-      <JFXButton id="signupButton" layoutX="517.0" layoutY="17.0" onAction="#clickSignUp" style="-fx-background-color: #151928;" text="Sign Up" textFill="WHITE">
+      <JFXButton id="signupButton" layoutX="840.0" layoutY="14.0" onAction="#clickSignUp" style="-fx-background-color: #2D2D2D;" text="Sign Up" textFill="#a1a1a1">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
          <effect>
-            <DropShadow color="WHITE" height="5.0" offsetX="1.5" offsetY="2.5" radius="2.0" width="5.0" />
+            <DropShadow height="1.0" offsetX="2.5" offsetY="4.5" radius="0.0" width="1.0" />
          </effect>
       </JFXButton>
-      <Label layoutX="415.0" layoutY="22.0" prefHeight="17.0" prefWidth="97.0" text="Not a member?" textFill="WHITE">
+      <Label layoutX="738.0" layoutY="19.0" prefHeight="17.0" prefWidth="97.0" text="Not a member?" textFill="#a1a1a1">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <JFXCheckBox id="rememberMeCheck" fx:id="rememberMeCheck" checkedColor="#9d0202" layoutX="282.0" layoutY="325.0" text=" " unCheckedColor="#a3a3a3">
+      <JFXCheckBox id="rememberMeCheck" fx:id="rememberMeCheck" checkedColor="#909090" layoutX="459.0" layoutY="465.0" text=" " unCheckedColor="#a3a3a3">
          <font>
             <Font size="18.0" />
          </font>
@@ -50,7 +50,7 @@
             <DropShadow />
          </effect>
       </JFXCheckBox>
-      <Label layoutX="157.0" layoutY="325.0" text="Remember me?" textFill="#a3a3a3">
+      <Label layoutX="334.0" layoutY="465.0" text="Remember me?" textFill="#a3a3a3">
          <font>
             <Font size="18.0" />
          </font>
