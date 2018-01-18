@@ -59,7 +59,7 @@ public class LoginController {
     public void clickSignUp(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/signupscreen.fxml"));
         currentStage = (Stage)userName.getScene().getWindow();
-        currentStage.setScene(new Scene(root, 600, 400));
+        currentStage.setScene(new Scene(root, 923, 551));
         currentStage.show();
     }
 

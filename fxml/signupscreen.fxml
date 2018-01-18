@@ -2,7 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
@@ -11,66 +11,83 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3DDB6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.SignUpController">
-   <children>      <Label contentDisplay="CENTER" layoutX="212.0" layoutY="67.0" prefHeight="53.0" prefWidth="86.0" style="-fx-alignment: center;" text="Red" textFill="#9d0202">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Label contentDisplay="CENTER" layoutX="353.0" layoutY="67.0" prefHeight="53.0" prefWidth="69.0" style="-fx-alignment: center;" text="Mal" textFill="#595959">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <JFXTextField id="signupUsername" fx:id="signupUsername" focusColor="#5a5a5a" layoutX="227.0" layoutY="157.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Username" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="923.0" style="-fx-background-image: url('file:C:/Users/Weikai/Documents/myJavaFX/src/redmal/images/shieldskin.png');" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redmal.controllers.SignUpController">
+   <children>
+      <JFXTextField id="signupUsername" fx:id="signupUsername" focusColor="#59595900" layoutX="321.0" layoutY="203.0" maxWidth="250.0" minWidth="169.0" prefHeight="26.0" prefWidth="250.0" promptText="Username" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: white;" unFocusColor="#6e010100">
          <font>
             <Font size="18.0" />
          </font>
       </JFXTextField>
-      <JFXTextField id="signupPassword" fx:id="signupPassword" focusColor="#5a5a5a" layoutX="227.0" layoutY="203.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  Password" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
+      <JFXTextField id="signupPassword" fx:id="signupPassword" focusColor="#59595900" layoutX="321.0" layoutY="253.0" maxWidth="250.0" minWidth="169.0" prefHeight="45.0" prefWidth="250.0" promptText="Password" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: white;" unFocusColor="#6e010100">
          <font>
             <Font size="18.0" />
          </font>
       </JFXTextField>
-      <JFXTextField id="signupEmail" fx:id="signupEmail" focusColor="#5a5a5a" layoutX="227.0" layoutY="253.0" maxWidth="205.0" minWidth="169.0" prefHeight="45.0" prefWidth="205.0" promptText="  E-mail" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: black;" unFocusColor="#6e0101">
+      <JFXTextField id="signupEmail" fx:id="signupEmail" focusColor="#59595900" layoutX="321.0" layoutY="298.0" maxWidth="250.0" minWidth="169.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" style="-fx-prompt-text-fill: #595959; -fx-text-inner-color: white;" unFocusColor="#6e010100">
          <font>
             <Font size="18.0" />
          </font>
       </JFXTextField>
-      <JFXButton id="submitSignupButton" alignment="CENTER" layoutX="266.0" layoutY="334.0" onAction="#createNewUser" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #6e0101 #6e0101;" text="Sign Up" textFill="WHITE">
+      <JFXButton id="submitSignupButton" fx:id="submitSignupButton" alignment="CENTER" layoutX="475.0" layoutY="349.0" onAction="#createNewUser" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #2D2D2D;" text="Sign Up" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <effect>
+            <DropShadow height="1.0" offsetX="2.5" offsetY="4.5" radius="0.0" spread="1.0" width="1.0" />
+         </effect>
       </JFXButton>
-      <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="203.0" layoutY="167.0">
+      <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="282.0" layoutY="212.0">
          <image>
             <Image url="@../images/usernamelogo.png" />
          </image>
-      </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="198.0" layoutY="209.0">
-         <image>
-            <Image url="@../images/pwlogo.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="151.0" fitWidth="106.0" layoutX="260.0" layoutY="14.0" preserveRatio="true">
-         <image>
-            <Image url="@../images/redmallogo.png" />
-         </image>
          <effect>
-            <Lighting diffuseConstant="1.51" specularConstant="0.65" surfaceScale="1.97">
+            <Lighting diffuseConstant="1.19" specularConstant="1.68" specularExponent="6.05" surfaceScale="4.65">
                <bumpInput>
                   <Shadow />
                </bumpInput>
                <light>
-                  <Light.Distant color="#f3ddb6" />
+                  <Light.Distant />
                </light>
             </Lighting>
          </effect>
       </ImageView>
-      <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="195.0" layoutY="256.0" preserveRatio="true">
+      <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="277.0" layoutY="254.0">
+         <image>
+            <Image url="@../images/pwlogo.png" />
+         </image>
+         <effect>
+            <Lighting diffuseConstant="1.19" specularConstant="1.68" specularExponent="6.05" surfaceScale="4.65">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="274.0" layoutY="301.0" preserveRatio="true">
          <image>
             <Image url="@../images/emaillogo.png" />
          </image>
+         <effect>
+            <Lighting diffuseConstant="1.19" specularConstant="1.68" specularExponent="6.05" surfaceScale="4.65">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
       </ImageView>
+      <JFXButton alignment="CENTER" layoutX="321.0" layoutY="349.0" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #2D2D2D;" text="Cancel" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow height="1.0" offsetX="2.5" offsetY="4.5" radius="0.0" spread="1.0" width="1.0" />
+         </effect>
+      </JFXButton>
    </children>
 </AnchorPane>
