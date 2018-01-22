@@ -1,24 +1,24 @@
 package redmal.controllers;
 
 import com.jfoenix.controls.JFXTextField;
-import com.mongodb.MongoClient;
-import com.mongodb.MongoException;
+import com.mongodb.*;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import redmal.classes.Main;
-
 import java.security.NoSuchAlgorithmException;
-import java.sql.*;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
 
 public class SignUpController {
     public JFXTextField signupUsername;
     public JFXTextField signupPassword;
     public JFXTextField signupEmail;
-    private Connection dbConnection = null;
     private MongoClient mongo;
     private MongoDatabase database;
     private MongoCollection<Document> collection;
+    private DBObject r, found;
 
 
     public SignUpController(){
@@ -81,16 +81,15 @@ public class SignUpController {
     // 'createNewUser' method and new account is created, otherwise, it sends
     // true and tells why account can't be created
     public boolean verifyIfUserExists(String username, String email){
-        Boolean doesNotExist = false;
+        Boolean doesNotExist = true;
         try {
-            String selectSQL = "SELECT * FROM UserDatabase WHERE Username ='" + username +"'";
-            String selectSQL2 = "SELECT * FROM UserDatabase WHERE Email ='" + email + "'";
-            PreparedStatement pst = dbConnection.prepareStatement(selectSQL);
-            PreparedStatement pst2 = dbConnection.prepareStatement(selectSQL2);
+            mongo = new MongoClient("localhost", 27017);
+            database = mongo.getDatabase("local");
+            collection = database.getCollection("UserDatabase");
+            
 
-            //Execute select SQL statement
-            ResultSet rs = pst.executeQuery();
-            if (rs.next()){
+            /*
+            if (doesNotExist){
                 doesNotExist = false;
                 System.out.println("User already exists.");
                 return doesNotExist;
@@ -108,7 +107,8 @@ public class SignUpController {
             else {
                 doesNotExist = true;
             }
-        }catch(SQLException exc){
+            */
+        }catch(MongoException exc){
             System.out.println(exc);
         }
         return doesNotExist;
