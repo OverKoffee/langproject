@@ -1,42 +1,49 @@
 package redmal.controllers;
 
 import com.jfoenix.controls.JFXTextField;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoException;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 import redmal.classes.Main;
-import java.io.IOException;
-import java.sql.*;
+
 import java.security.NoSuchAlgorithmException;
+import java.sql.*;
 
 public class SignUpController {
     public JFXTextField signupUsername;
     public JFXTextField signupPassword;
     public JFXTextField signupEmail;
     private Connection dbConnection = null;
-    private String url = "jdbc:mysql://sql3.freemysqlhosting.net:3306/sql3214145";
-    private String user = "sql3214145";
-    private String password = "EmrDHlTHv3";
+    private MongoClient mongo;
+    private MongoDatabase database;
+    private MongoCollection<Document> collection;
 
 
     public SignUpController(){
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            dbConnection = DriverManager.getConnection(url, user, password);
-            if (dbConnection != null){
-                System.out.println("Connected to database successfully.");
-            }
-        }catch (ClassNotFoundException | SQLException exc){
-            System.out.println("An error occurred while trying to connect to database.");
-            System.out.println(exc);
-        }
+        mongo = new MongoClient("localhost", 27017);
+        database = mongo.getDatabase("local");
+        collection = database.getCollection("UserDatabase");
+        System.out.println("running constructor");
     }
 
     // this method adds account information input by user to the database
     // and creates account, after it's verified username and email aren't
     // already being used (through the 'verifyIfUserExists' method down below
-    public void createNewUser() throws IOException {
+    public void createNewUser() {
+        MongoClient mongo = new MongoClient("localhost", 27017);
+        try {
+            //at some point I'll a some checks and rules to what can be used for username/password etc.
+            collection.insertOne(new Document("User", Main.cleanInput(signupUsername.getText()))
+                    .append("Password", Main.hash(signupPassword.getText()))
+                    .append("Email", Main.cleanInput(signupEmail.getText())));
+        } catch (MongoException | NoSuchAlgorithmException exc){
+            System.out.println(exc);
+        }
+        mongo.close();
+    }
+    /* public void createNewUser() throws IOException {
         String query = "INSERT INTO UserDatabase (Username, Password, Email) VALUES (?,?,?)";
 
         if (verifyIfUserExists(signupUsername.getText(), signupEmail.getText())){
@@ -67,6 +74,7 @@ public class SignUpController {
             System.out.println("Unable to create account.");
         }
     }
+    */
 
     // this method checks if the Username and E-mail input by the user
     // already exists in the UserDatabase, if not, it sends false to the above

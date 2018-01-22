@@ -2,6 +2,11 @@ package redmal.controllers;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.mongodb.DB;
+import com.mongodb.Mongo;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +17,17 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import com.mongodb.BasicDBObject;
+import com.mongodb.BasicDBObjectBuilder;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
+import com.mongodb.WriteResult;
+import com.mongodb.util.JSON;
+
+
 
 public class LoginController {
     public JFXTextField userName;
@@ -65,6 +81,9 @@ public class LoginController {
 
     public boolean verifyLogin(String username, String pw) {
         boolean userVerified = false;
+        //MongoClient mongo = new MongoClient();
+        //MongoDatabase database = mongo.getDatabase("local");
+
         try {
             String selectSQL = "SELECT * FROM UserDatabase WHERE Username ='" + username +
                     "' and Password='" + Main.hash(pw) + "'";
