@@ -10,12 +10,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.bson.Document;
-import org.bson.conversions.Bson;
 import redmal.classes.Main;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import com.mongodb.DBObject;
+import com.mongodb.client.model.Filters.*;
+
 import static com.mongodb.client.model.Filters.eq;
+
 
 public class SignUpController {
     public JFXTextField signupUsername;
@@ -40,7 +41,7 @@ public class SignUpController {
         if (verifyIfUserExists(signupUsername.getText(), signupEmail.getText())){
             MongoClient mongo = new MongoClient("localhost", 27017);
             try {
-                //at some point I'll a some checks and rules to what can be used for username/password etc.
+                //at some point I'll add some checks and rules to what can be used for username/password etc.
                 collection.insertOne(new Document("User", Main.cleanInput(signupUsername.getText()))
                         .append("Password", Main.hash(signupPassword.getText()))
                         .append("Email", Main.cleanInput(signupEmail.getText())));
@@ -65,27 +66,31 @@ public class SignUpController {
     // 'createNewUser' method and new account is created, otherwise, it sends
     // true and tells why account can't be created
     public boolean verifyIfUserExists(String username, String email){
-        boolean doesNotExist = false;
+        boolean doesNotExist = true;
         String validateString = "";
         try {
             mongo = new MongoClient("localhost", 27017);
             database = mongo.getDatabase("local");
-            collection = database.getCollection("UserDatabase");
+            //collection = database.getCollection("UserDatabase");
 
-            FindIterable<Document> search = collection.find(new Document("User", username));
+            FindIterable<Document> search = database.getCollection("UserDatabase").find();
 
             for (Document current : search) {
                 validateString = current.getString("User");
-                if (validateString == username){
+                if (validateString == username) {
                     doesNotExist = false;
                     System.out.println("Username already being used.");
-                }else {
-                    doesNotExist = true;
                 }
             }
 
-            search = collection.find(new Document("Email", email));
             for (Document current : search) {
+                validateString = current.getString("Email");
+                if (validateString == email) {
+                    doesNotExist = false;
+                    System.out.println("Email already being used.");
+                }
+            }
+            /*for (Document current : search) {
                 validateString = current.getString("Email");
                 if (validateString == email){
                     System.out.println("Email already being used.");
@@ -93,7 +98,7 @@ public class SignUpController {
                 }else {
                     doesNotExist = true;
                 }
-            }
+            }*/
 
         }catch (MongoException exc){
             System.out.println(exc);
