@@ -13,9 +13,6 @@ import org.bson.Document;
 import redmal.classes.Main;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import com.mongodb.client.model.Filters.*;
-
-import static com.mongodb.client.model.Filters.eq;
 
 
 public class SignUpController {
@@ -77,7 +74,7 @@ public class SignUpController {
 
             for (Document current : search) {
                 validateString = current.getString("User");
-                if (validateString == username) {
+                if (validateString.equals(username)) {
                     doesNotExist = false;
                     System.out.println("Username already being used.");
                 }
@@ -85,7 +82,7 @@ public class SignUpController {
 
             for (Document current : search) {
                 validateString = current.getString("Email");
-                if (validateString == email) {
+                if (validateString.equals(email)) {
                     doesNotExist = false;
                     System.out.println("Email already being used.");
                 }
